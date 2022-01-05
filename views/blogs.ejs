@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partial/head.ejs') %>
+  <link rel="stylesheet" href="style.css" />
+  <body>
+    <%- include('./partial/nav.ejs') %>
+    <h1>home page</h1>
+    <% if (blogs.length > 0) { %> <% blogs.forEach(blog => { %>
+    <h3><%= blog.title %></h3>
+    <h4><%= blog.snippet %></h4>
+    <p><%= blog.body %></p>
+    <% }); %> <% } else { %>
+    <h3>There is no blog to show</h3>
+    <% }; %>
+  </body>
+</html>
